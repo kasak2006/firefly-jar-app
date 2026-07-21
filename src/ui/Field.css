@@ -1,0 +1,16 @@
+.field label{display:block; font-family:'Playfair Display', serif; font-style:italic; font-size:1.05rem; font-weight:600; margin:16px 0 6px; color:var(--ink-soft);}
+.field textarea, .field input[type=date], .field input[type=email], .field input[type=password], .field input[type=text]{
+  width:100%; font-family:'Libre Baskerville', serif; font-size:1rem; padding:10px 12px; border-radius:3px;
+  border:1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  background:var(--paper-card); resize:vertical; color:var(--ink);
+}
+.field textarea{min-height:90px;}
+.field textarea:focus, .field input:focus{outline:none; border-color:var(--terracotta);}
+.field textarea:focus-visible, .field input:focus-visible{outline:2px solid var(--terracotta); outline-offset:1px;}
+
+.password-field{position:relative;}
+.password-field input{padding-right:42px;}
+.password-field .icon-btn{position:absolute; right:6px; top:50%; transform:translateY(-50%); padding:4px; border-radius:3px;}
+
+.hint{font-family:'Libre Baskerville', serif; font-size:.8rem; font-style:italic; color:var(--ink-soft); margin-top:6px; opacity:.85;}
+.error-text{color:var(--error); font-size:.82rem; margin-top:8px; min-height:1em; font-family:'Libre Baskerville', serif;}

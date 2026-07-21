@@ -1,0 +1,40 @@
+*{box-sizing:border-box;}
+html,body,#root{margin:0;padding:0;}
+body{
+  min-height:100vh; font-family:'Libre Baskerville', serif; color:var(--ink);
+  position:relative; overflow-x:hidden; padding:56px 20px 110px;
+  background-color:var(--body-bg);
+  background-image:
+    linear-gradient(90deg, transparent 50%, var(--body-fold) 50%),
+    linear-gradient(0deg, transparent 50%, var(--body-fold) 50%);
+  background-size:42px 42px, 42px 42px;
+  background-blend-mode:multiply, multiply;
+}
+/* subtle paper grain, purely decorative */
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.25; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.wrap{position:relative; z-index:1; max-width:520px; margin:0 auto; text-align:center;}
+.wordmark{font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:3.1rem; line-height:1; color:var(--terracotta); margin:0 0 4px; transform:rotate(-2deg); display:inline-block;}
+.tagline{font-family:'Libre Baskerville', serif; font-style:italic; font-weight:400; font-size:1rem; color:var(--ink-soft); margin:0 0 10px; line-height:1.5;}
+.count{font-family:'Playfair Display', serif; font-style:italic; font-size:1.15rem; letter-spacing:.02em; color:var(--ink-soft); margin-bottom:26px;}
+
+@media (max-width:359px){
+  body{padding:40px 14px 90px;}
+  .wordmark{font-size:2.5rem;}
+}
+
+@media (min-width:768px){
+  .wrap{max-width:600px;}
+  .wordmark{font-size:3.6rem;}
+}
+
+@media (min-width:1024px){
+  .wrap{max-width:680px;}
+}
+
+.photo-thumbs{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;}
+.photo-thumb{position:relative; width:64px; height:64px; border-radius:8px; overflow:hidden; box-shadow:0 2px 6px rgba(90,60,25,.2);}
+.photo-thumb-img{width:100%; height:100%; background-size:cover; background-position:center;}

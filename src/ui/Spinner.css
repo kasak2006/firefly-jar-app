@@ -1,0 +1,5 @@
+.spinner{
+  display:inline-block; border-radius:50%;
+  border:2px dashed var(--kraft-dark);
+}
+.spinner-sm{ width:14px; height:14px; border-width:2px; }

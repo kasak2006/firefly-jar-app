@@ -1,0 +1,29 @@
+.account-wrap{position:relative; display:inline-block; margin-bottom:18px;}
+.account-btn{
+  font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:1.05rem; letter-spacing:.02em;
+  padding:5px 20px; border-radius:3px 10px 3px 10px/8px 3px 10px 3px; border:1.5px dashed var(--kraft-dark);
+  background:var(--paper-deep); color:var(--ink-soft); cursor:pointer;
+  transition:transform .15s ease, background .2s ease, color .2s ease;
+}
+.account-btn:hover{background:var(--paper-card); color:var(--ink); transform:translateY(-1px);}
+.account-dropdown{
+  position:absolute; top:calc(100% + 8px); left:50%; transform:translateX(-50%); z-index:6;
+  background:var(--paper-card); min-width:230px; text-align:center; padding:14px 18px;
+  border-radius:3px 14px 3px 14px/10px 3px 14px 3px;
+  box-shadow:0 12px 24px rgba(90,70,45,.18);
+}
+.account-email{font-family:'Libre Baskerville', serif; font-size:.82rem; color:var(--ink-soft); margin:0 0 10px; word-break:break-all;}
+.account-signout{
+  font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:1.05rem; padding:6px 22px;
+  border-radius:3px 10px 3px 10px/8px 3px 10px 3px; border:1.5px solid var(--dusty-pink);
+  background:var(--dusty-pink); color:#4a2b30; cursor:pointer; transition:transform .15s ease;
+}
+.account-signout:hover{transform:translateY(-1px) rotate(-1deg);}
+.account-theme{
+  display:flex; gap:6px; justify-content:center; margin:0 0 12px;
+}
+.account-theme button{
+  font-family:'Libre Baskerville', serif; font-size:.75rem; padding:5px 10px; border-radius:12px;
+  border:1px solid rgba(90,60,25,.25); background:transparent; color:var(--ink-soft); cursor:pointer;
+}
+.account-theme button.active{background:var(--sage); color:#fdf8ea; border-color:var(--sage);}

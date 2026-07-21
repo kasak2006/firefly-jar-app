@@ -1,0 +1,35 @@
+.btn, .btn-primary, .btn-secondary, .link-btn, .clear-link{
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+}
+
+.btn{
+  font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:1.3rem; letter-spacing:.01em;
+  padding:10px 32px; border-radius:4px 14px 4px 14px/12px 4px 14px 4px; border:1.5px dashed var(--kraft-dark);
+  background:var(--paper-deep); color:var(--terracotta); cursor:pointer;
+  transition:transform .18s ease, background .2s ease, rotate .18s ease; position:relative; margin-top:16px;
+}
+.btn::before,.btn::after{content:"★"; font-size:.7rem; color:var(--kraft-dark); opacity:.6; position:absolute; top:50%; transform:translateY(-50%);}
+.btn::before{left:12px;} .btn::after{right:12px;}
+.btn:hover{background:var(--paper-card); transform:translateY(-2px) rotate(-1deg);}
+.btn:disabled{opacity:.5; cursor:not-allowed;}
+
+.btn-primary, .btn-secondary{
+  font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:1.2rem;
+  padding:9px 22px; border-radius:4px 12px 4px 12px/10px 4px 12px 4px; cursor:pointer;
+  border:1.5px solid transparent; transition:transform .15s ease;
+}
+.btn-primary{background:var(--dusty-pink); color:#4a2b30;}
+.btn-secondary{background:transparent; color:var(--ink-soft); border-color:rgba(90,60,25,.25);}
+.btn-primary:hover, .btn-secondary:hover{transform:translateY(-1px) rotate(-1deg);}
+.btn-primary:disabled, .btn-secondary:disabled{opacity:.4; cursor:not-allowed; transform:none;}
+
+.clear-link{display:flex; margin:16px auto 0; font-size:.8rem; color:var(--ink-soft); opacity:.6; background:none; border:none; cursor:pointer; text-decoration:underline; font-family:'Libre Baskerville', serif;}
+.clear-link:hover{opacity:.9;}
+
+.link-btn{background:none; border:none; color:var(--terracotta); text-decoration:underline; cursor:pointer; font-size:.82rem; font-style:italic; font-family:'Libre Baskerville', serif; padding:0;}
+
+.btn-label-loading{opacity:.65;}
+
+.btn:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible, .link-btn:focus-visible, .clear-link:focus-visible{
+  outline:2px solid var(--terracotta); outline-offset:2px;
+}
