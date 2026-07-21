@@ -102,7 +102,7 @@ export default function AddMemoryModal({ onCancel, onSubmit }) {
           <IconButton label="back" onClick={() => (step === 'letter' ? onCancel() : setStep('letter'))}>
             <BackIcon />
           </IconButton>
-          <h1 className="letter-title" id="letterTitle">Love Letter</h1>
+          <h1 className="letter-title" id="letterTitle">Letter</h1>
           {step === 'letter' ? (
             <button type="button" className="next-step-btn" onClick={goToDetails}>
               Next Step <span aria-hidden="true">→</span>
