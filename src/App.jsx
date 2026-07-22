@@ -8,6 +8,7 @@ import AccountMenu from './components/AccountMenu.jsx'
 import AuthScreen from './components/AuthScreen.jsx'
 import SetPasswordScreen from './components/SetPasswordScreen.jsx'
 import Jar from './components/Jar.jsx'
+import LoadingScreen from './components/LoadingScreen.jsx'
 import AddMemoryModal from './components/AddMemoryModal.jsx'
 import ViewMemoryModal from './components/ViewMemoryModal.jsx'
 
@@ -42,7 +43,21 @@ export default function App() {
   }, [user, load])
 
   if (checkingSession) {
-    return <Background />
+    return (
+      <>
+        <Background />
+        <LoadingScreen label="waking the jar" />
+      </>
+    )
+  }
+
+  if (user && loading) {
+    return (
+      <>
+        <Background />
+        <LoadingScreen label="gathering fireflies" />
+      </>
+    )
   }
 
   if (recovering) {
@@ -97,7 +112,7 @@ export default function App() {
         <AccountMenu email={user.email} />
         <p className="count">{countText}</p>
 
-        {!loading && <Jar fireflies={fireflies} onSelect={handleSelect} />}
+        <Jar fireflies={fireflies} onSelect={handleSelect} />
 
         <Button variant="cta" onClick={() => setShowAdd(true)}>
           catch a firefly
