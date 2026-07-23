@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { supabase } from '../supabaseClient'
+import { supabase, siteUrl } from '../supabaseClient'
 import PasswordInput from './PasswordInput.jsx'
 import PaperCard from '../ui/PaperCard.jsx'
 import Field from '../ui/Field.jsx'
@@ -21,7 +21,7 @@ export default function AuthScreen() {
     setSending(true)
     setMessage('sending…')
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin,
+      redirectTo: siteUrl,
     })
     setSending(false)
     setMessage(error ? error.message : 'check your inbox for a link to set your password.')
@@ -39,7 +39,7 @@ export default function AuthScreen() {
       const { error } = await supabase.auth.signUp({
         email,
         password,
-        options: { emailRedirectTo: window.location.origin },
+        options: { emailRedirectTo: siteUrl },
       })
       setSending(false)
       setMessage(error ? error.message : 'check your inbox for a confirmation link, then sign in.')
